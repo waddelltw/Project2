@@ -64,7 +64,7 @@ do
         }
         else
         {
-            Console.WriteLine("No characters were found...");
+            Console.WriteLine("You have not made a character yet...");
 
             Console.WriteLine();
         }
@@ -84,7 +84,7 @@ do
         }
         else
         {
-            Console.WriteLine("No characters were found...");
+            Console.WriteLine("You have not made a character yet...");
 
             Console.WriteLine();
         }
@@ -106,7 +106,7 @@ do
         }
         else
         {
-            Console.WriteLine("No characters were found...");
+            Console.WriteLine("You have not made a character yet...");
 
             Console.WriteLine();
         }
@@ -128,7 +128,7 @@ do
         }
         else
         {
-            Console.WriteLine("No characters were found...");
+            Console.WriteLine("You have not made a character yet...");
 
             Console.WriteLine();
         }
@@ -150,7 +150,7 @@ do
         }
         else
         {
-            Console.WriteLine("No characters were found...");
+            Console.WriteLine("You have not made a character yet...");
 
             Console.WriteLine();
         }
