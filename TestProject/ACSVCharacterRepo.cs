@@ -27,19 +27,19 @@ public class ACSVCharacterRepo
 
         var returnedCharacter = sut.ReadOne("Test", "1");
 
-        if(returnedCharacter != null)
+        if (returnedCharacter != null)
         {
             Assert.AreEqual(character.Name, returnedCharacter.Name);
-            
+
             Assert.AreEqual(character.Level, returnedCharacter.Level);
-            
+
             Assert.AreEqual(character.HP, returnedCharacter.HP);
-            
+
             Assert.AreEqual(character.StrengthStat, returnedCharacter.StrengthStat);
-            
+
             Assert.AreEqual(character.DefenseStat, returnedCharacter.DefenseStat);
         }
-        
+
         else
         {
             Console.WriteLine("No character was found.");
@@ -51,7 +51,7 @@ public class ACSVCharacterRepo
 
         list = sut.ReadAll();
 
-        foreach(var characterObj in list)
+        foreach (var characterObj in list)
         {
             Console.WriteLine(characterObj);
         }
@@ -87,9 +87,9 @@ public class ACSVCharacterRepo
 
         sut.UpdateCharacter("Original", "5", updatedCharacter);
 
-        var returnedCharacter = sut.ReadOne("Updated", "5");    
+        var returnedCharacter = sut.ReadOne("Updated", "5");
 
-        if(returnedCharacter != null)
+        if (returnedCharacter != null)
         {
             Assert.AreEqual(updatedCharacter.Name, returnedCharacter.Name);
 

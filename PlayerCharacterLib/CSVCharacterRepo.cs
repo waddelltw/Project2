@@ -32,7 +32,7 @@ public class CSVCharacterRepo : ICharacterRepo
             StreamWriter writer = new(_filePath, append: true);
 
             // Then, "writer" will write onto the file with WriteLine. "writer" will write to character's values as comma separated values.
-            
+
             writer.WriteLine(character.ToCSV());
 
             // After the writer has written this, "writer" will close the file.
@@ -42,10 +42,10 @@ public class CSVCharacterRepo : ICharacterRepo
 
         // If something goes wrong, an error message is shown.
 
-        catch(Exception ex)
+        catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
-        }  
+        }
     }
 
     // This is the ReadAll method. It will return a list of PlayerCharacter objects.
@@ -55,7 +55,7 @@ public class CSVCharacterRepo : ICharacterRepo
         // First a new list of PlayerCharacter objects called "characterList" is created.
 
         List<PlayerCharacter> characterList = new();
-        
+
         // This try/catch block will try to catch any error that might happen
 
         try
@@ -73,7 +73,7 @@ public class CSVCharacterRepo : ICharacterRepo
 
             // While "record" did not store a null value("reader" didn't reach the EOF), these statements will execute.
 
-            while(record != null)
+            while (record != null)
             {
                 // First, an array of strings called "fields" is created. This will store each value that was written onto the file.
                 // Since each value was split by commas (,), each index will store a specifice value.
@@ -83,7 +83,7 @@ public class CSVCharacterRepo : ICharacterRepo
 
                 // If fields is not null, then these statements are executed.
 
-                if(fields != null)
+                if (fields != null)
                 {
                     // Next, a new PlayerCharacter object is created with each value from the fields array.
 
@@ -115,7 +115,7 @@ public class CSVCharacterRepo : ICharacterRepo
 
         // If something goes wrong, an error message is displayed.
 
-        catch(Exception ex)
+        catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
         }
@@ -192,10 +192,10 @@ public class CSVCharacterRepo : ICharacterRepo
 
             reader.Close();
         }
-        
+
         // This will show an error message if something wrong happened.
 
-        catch(Exception ex)
+        catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
         }

@@ -38,12 +38,12 @@ public class PlayerCharacter : IEntityStats
 
         set
         {
-            if(value <= 0)
+            if (value <= 0)
             {
                 throw new InvalidStatException("Your level can't be 0 or below!");
             }
 
-            if(value > 99)
+            if (value > 99)
             {
                 throw new InvalidStatException("Your level can't be greater than 99!");
             }
@@ -69,12 +69,12 @@ public class PlayerCharacter : IEntityStats
 
         set
         {
-            if(value < 0)
+            if (value < 0)
             {
                 throw new InvalidStatException("You can't have your health below 0!");
             }
 
-            if(value > 9999)
+            if (value > 9999)
             {
                 throw new InvalidStatException("You can't have your health exceed 9999!");
             }
@@ -175,7 +175,7 @@ public class PlayerCharacter : IEntityStats
 
             enemy.HP = healthAfterDamage;
         }
-        
+
         // If healthAfterDamage is not 0 or below, then the enemy's HP is equal to the healthAfterDamage.
 
         else

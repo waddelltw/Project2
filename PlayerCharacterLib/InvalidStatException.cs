@@ -6,7 +6,7 @@ public class InvalidStatException : Exception
 {
     public InvalidStatException() : base("Invalid Stat!")
     {
-     
+
     }
 
     public InvalidStatException(string message) : base(message)

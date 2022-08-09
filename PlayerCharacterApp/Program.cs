@@ -25,7 +25,7 @@ do
 {
     // If the file called "Characters.csv" exists, the repo's method called ReadAll will update the list of all current characters.
 
-    if(File.Exists("Characters.csv"))
+    if (File.Exists("Characters.csv"))
     {
         characterList = repo.ReadAll();
     }
@@ -41,8 +41,8 @@ do
     // Below are a series of If - else if - else statements. An action is took depending on what the user chose.
     // If "C" or "c" is entered, then repo's Create method is performed.
     // Since the CreateCharacter method returns a PlayerCharacter object, you can use it inside of the Create method.
- 
-    if(answer.ToUpper() == "C")
+
+    if (answer.ToUpper() == "C")
     {
         Console.WriteLine();
 
@@ -53,10 +53,10 @@ do
 
     // If the user entered "A" or "a", then the program goes to this block. Next the program checks to see if the file "Characters.csv" exists.
     // If so, then the method ShowAllCharacters is called. If not, then the program says that no characters were found..
-    
-    else if(answer.ToUpper() == "A")
+
+    else if (answer.ToUpper() == "A")
     {
-        if(File.Exists("Characters.csv"))
+        if (File.Exists("Characters.csv"))
         {
             Console.WriteLine();
 
@@ -76,7 +76,7 @@ do
 
     else if (answer.ToUpper() == "V")
     {
-        if(File.Exists("Characters.csv"))
+        if (File.Exists("Characters.csv"))
         {
             Console.WriteLine();
 
@@ -140,7 +140,7 @@ do
 
     else if (answer.ToUpper() == "B")
     {
-        if(File.Exists("Characters.csv"))
+        if (File.Exists("Characters.csv"))
         {
             Console.WriteLine();
 
@@ -159,7 +159,7 @@ do
     // If the user entered "X" or "x", then the program goes to this block.
     // This is here to tell the user Goodbye, and then the program closes.
 
-    else if(answer.ToUpper() == "X")
+    else if (answer.ToUpper() == "X")
     {
         Console.WriteLine("Goodbye!");
     }
@@ -182,13 +182,13 @@ do
 static void MainMenu()
 {
     Console.WriteLine("C = Create Character");
-    
+
     Console.WriteLine("A = View All Created Characters");
-    
+
     Console.WriteLine("V = View One Character");
-    
+
     Console.WriteLine("U = Update A Character");
-    
+
     Console.WriteLine("D = Delete A Character");
 
     Console.WriteLine("B = Battle Simulator");
@@ -203,7 +203,7 @@ static void MainMenu()
 static string ReadString(string prompt)
 {
     string value = "";
-    
+
     // This do - while loop will keep on repeating until the user enters something.
     // When the user enters something valid, it is stored in the "stringValue" variable.
     // Then, "value" will equal "stringValue" and the loop will stop. Finally, "value" is returned.
@@ -240,7 +240,7 @@ static void ReadLevel(PlayerCharacter character)
     // A try-catch block is also here to catch any errors that might happen.
 
     do
-    {       
+    {
         try
         {
             // The ReadString method is uesed here to return a string that hopefully will be parsed as an int.
@@ -255,14 +255,14 @@ static void ReadLevel(PlayerCharacter character)
 
         // If the format is wrong (You can't pass letters as an integer), the Format Exception is thrown.
 
-        catch(FormatException ex)
+        catch (FormatException ex)
         {
             Console.WriteLine(ex.Message);
         }
 
         // If the user enters in an invalid stat, this exception is thrown.
 
-        catch(InvalidStatException ex)
+        catch (InvalidStatException ex)
         {
             Console.WriteLine(ex.Message);
         }
@@ -375,11 +375,11 @@ static void ReadDefense(IEntityStats entity)
             Console.WriteLine(ex.Message);
         }
 
-        catch(Exception ex)
+        catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
         }
-        
+
     } while (true);
 }
 
@@ -408,7 +408,7 @@ static PlayerCharacter CreateCharacter()
 
 static void ShowAllCharacters(List<PlayerCharacter> list)
 {
-    foreach(var character in list)
+    foreach (var character in list)
     {
         Console.WriteLine(character);
     }
@@ -430,7 +430,7 @@ static void ShowOneCharacter(ICharacterRepo repo)
 
     // If "character" is not null, then the object ToString is used to display that character's information.
 
-    if(character != null)
+    if (character != null)
     {
         Console.WriteLine(character);
     }
@@ -563,8 +563,8 @@ static void BattleSimulation(ICharacterRepo repo)
             // The program will say that the player character attacks. Then, the character's AttackEnemy method is used.
             // The enemy object is passed into this method. Then the program will display the enemy's HP.
 
-            Console.WriteLine($"{character.Name} attacks!"); 
-            
+            Console.WriteLine($"{character.Name} attacks!");
+
             character.AttackEnemy(enemy);
 
             Console.WriteLine($"The enemy's HP is now: {enemy.HP}");
@@ -572,7 +572,7 @@ static void BattleSimulation(ICharacterRepo repo)
             // If the enemy's HP is 0, the program will say that the player character defeated the enemy.
             // Then, the program will say that it is closing the battle simulation. The loop ends after that.
 
-            if(enemy.HP == 0)
+            if (enemy.HP == 0)
             {
                 Console.WriteLine($"{character.Name} has defeated the enemy!");
 
@@ -613,7 +613,7 @@ static void BattleSimulation(ICharacterRepo repo)
 
         // If "Y" or "y" was entered, the program will say that the character escaped while they still could.
 
-        if(choice.ToUpper() == "Y")
+        if (choice.ToUpper() == "Y")
         {
             Console.WriteLine($"{character.Name} ran away...");
         }

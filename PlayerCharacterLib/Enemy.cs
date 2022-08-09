@@ -22,7 +22,7 @@ public class Enemy : IEntityStats
         {
             return _hp;
         }
-        
+
         // The setter sets the value in _hp. If the incoming value is below 0, then an InvalidStatException is thrown.
         // If the incoming value is greater than 9999, then an InvalidStatException is thrown.
         // If the incoming value is valid, then it is stored in _hp.
